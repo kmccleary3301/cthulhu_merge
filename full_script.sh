@@ -12,4 +12,4 @@ done
 ./merge_command.sh
 ./clean_octo.sh $1
 rm branch_list.txt
-#rm merge_command.sh
+rm merge_command.sh
