@@ -13,10 +13,11 @@ git commit -m "Added the octo file with $1 lines"
 
 # Now use a double for loop to create 8 branches and make multiple commits in each branch
 # Create the 'head' branch - the branch all others are created from
+echo "making branches";
 for i in $(eval echo "{1..$1}")
 do
-    git checkout -b octo_branch_$i;
-    echo -n "modifying branch: $i";
+    git checkout -b octo_branch_$i &> /dev/null;
+    printf "branch %09d\n" $i;
     for j in {1..3}
     do
         sed -n -i -e "s/line $i _/line $i _ $RANDOM/g" octo_test.txt;
@@ -24,7 +25,7 @@ do
         git commit -m "Commit $j for branch $i" &> /dev/null;
     done
     # Since we want all 8 branches based off same branch, checkout master.
-    git checkout master;
+    git checkout master &> /dev/null;
 done
 
 # At this point, branch 8 should be checkout out
