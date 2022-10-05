@@ -30,12 +30,21 @@ do
 done
 
 #merge
-var_CMD = "git merge -s octopus master";
-for i in {1..$1}
+var_STR="git merge -s octopus master";
+echo "$var_STR"
+for i in $(eval echo "{1..$1}")
 do
-    var_CMD = "$var_CMD octo_branch_$i";
+    var_STR="$var_STR octo_branch_$i";
 done
-eval "$var_CMD"
+echo "$var_STR";
+eval "$var_STR";
+
+#delete branches
+git checkout master;
+for i in $(eval echo "{1..$1}")
+do
+    git branch -D octo_branch_$i;
+done
 
 #remove temp  file
 rm $2
