@@ -4,7 +4,7 @@
 ./octo_merge.sh $1
 
 
-echo -n "git merge master" >> merge_command.sh
+echo -n "git merge -s octopus master" >> merge_command.sh
 for i in $(eval echo "{1..$1}")
 do
     echo -n " octo_branch_$i" >> merge_command.sh
