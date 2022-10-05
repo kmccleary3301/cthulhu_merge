@@ -46,5 +46,7 @@ do
     git branch -D octo_branch_$i;
 done
 
+git push
+
 #remove temp  file
 rm $2
