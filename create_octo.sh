@@ -8,8 +8,10 @@
 ./make_octo_txt.sh $1
 
 # Now add and commit this file
-git add octo_test.txt
-git commit -m "Added the octo file with $1 lines"
+git add octo_test.txt &> /dev/null
+echo "Making octo file";
+git commit -m "Added the octo file with $1 lines" &> /dev/null
+echo "Added the octo file with $1 lines";
 
 # Now use a double for loop to create 8 branches and make multiple commits in each branch
 # Create the 'head' branch - the branch all others are created from
