@@ -31,16 +31,14 @@ done
 
 #merge
 var_STR="git merge -s octopus master";
-echo "$var_STR"
 for i in $(eval echo "{1..$1}")
 do
     var_STR="$var_STR octo_branch_$i";
 done
-echo "$var_STR";
 eval "$var_STR";
 
 #delete branches
-git checkout master;
+git checkout master &> /dev/null;
 for i in $(eval echo "{1..$1}")
 do
     git branch -D octo_branch_$i;
