@@ -29,15 +29,13 @@ do
     git checkout master &> /dev/null;
 done
 
-#make merge command
-echo -n "git merge -s octopus master" >> merge_command.sh
-for i in $(eval echo "{1..$1}")
+#merge
+var_CMD = "git merge -s octopus master";
+for i in {1..$1}
 do
-    echo -n " octo_branch_$i" >> merge_command.sh;
+    var_CMD = "$var_CMD octo_branch_$i";
 done
-
-#execute merge command
-./merge_command.sh
+eval "$var_CMD"
 
 #remove temp  file
 rm $2
