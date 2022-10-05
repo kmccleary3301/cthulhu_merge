@@ -16,6 +16,7 @@ git commit -m "Added the octo file with $1 lines"
 for i in $(eval echo "{1..$1}")
 do
     git checkout -b octo_branch_$i;
+    echo -n "modifying branch: $i";
     for j in {1..3}
     do
         sed -n -i -e "s/line $i _/line $i _ $RANDOM/g" octo_test.txt;
