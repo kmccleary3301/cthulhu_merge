@@ -18,9 +18,9 @@ do
     git checkout -b octo_branch_$i;
     for j in {1..3}
     do
-        sed -i -e "s/line $i _/line $i _ $RANDOM/g" octo_test.txt;
+        sed -n -i -e "s/line $i _/line $i _ $RANDOM/g" octo_test.txt;
         git add octo_test.txt;
-        git commit -m "Commit $j for branch $i";
+        git commit -m "Commit $j for branch $i" &> /dev/null;
     done
     # Since we want all 8 branches based off same branch, checkout master.
     git checkout master;
