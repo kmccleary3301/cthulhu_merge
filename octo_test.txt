@@ -1,22 +1,22 @@
 This is line 1 _
 
 
-This is line 2 _ 13032 9809 22651
+This is line 2 _
 
 
-This is line 3 _ 11517 32523 11972
+This is line 3 _
 
 
-This is line 4 _ 10786 18165 12989
+This is line 4 _
 
 
-This is line 5 _ 25741 25312 19400
+This is line 5 _
 
 
-This is line 6 _ 16052 24209 9609
+This is line 6 _
 
 
-This is line 7 _ 12194 5894 14595
+This is line 7 _
 
 
 This is line 8 _
@@ -25,6 +25,6 @@ This is line 8 _
 This is line 9 _
 
 
-This is line 10 _ 10107 21813 22812
+This is line 10 _
 
 
