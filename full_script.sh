@@ -3,6 +3,11 @@
 ./create_octo.sh $1
 ./octo_merge.sh $1
 
-git merge master "($ < branch_list.txt)"
-cat branch_list.txt | xargs -0 git merge master {}
+
+echo -n "git merge master" >> merge_command.sh
+for i in $(eval echo "{1..$1}")
+do
+    echo -n " octo_branch_$i" >> merge_command.sh
+done
+
 ./clean_octo.sh $1
